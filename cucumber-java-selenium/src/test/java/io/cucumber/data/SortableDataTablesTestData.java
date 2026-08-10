@@ -1,0 +1,11 @@
+package io.cucumber.data;
+
+import java.util.List;
+
+public class SortableDataTablesTestData {
+    public static final List<String> EXPECTED_ROWS = List.of(
+            "Smith|John|jsmith@gmail.com|$50.00|http://www.jsmith.com",
+            "Bach|Frank|fbach@yahoo.com|$51.00|http://www.frank.com",
+            "Doe|Jason|jdoe@hotmail.com|$100.00|http://www.jdoe.com",
+            "Conway|Tim|tconway@earthlink.net|$50.00|http://www.timconway.com");
+}
