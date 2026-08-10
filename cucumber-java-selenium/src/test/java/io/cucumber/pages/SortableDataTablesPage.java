@@ -23,8 +23,8 @@ public class SortableDataTablesPage extends Page {
         return rows;
     }
 
-    public List<String> getActualRows() {
-        List<String> actualRows = new ArrayList<>();
+    public List<List<String>> getActualRows() {
+        List<List<String>> actualRows = new ArrayList<>();
         for (WebElement row : getRows()) {
             List<WebElement> columns = row.findElements(By.xpath("./td"));
 
@@ -33,12 +33,10 @@ public class SortableDataTablesPage extends Page {
                 continue;
             }
 
-            String actualRow = columns.get(0).getText() + "|" +
-                            columns.get(1).getText() + "|" +
-                            columns.get(2).getText() + "|" +
-                            columns.get(3).getText() + "|" +
-                            columns.get(4).getText();
-//add the 5 combined strings
+            List<String> actualRow = new ArrayList<>();
+            for (WebElement column : columns) {
+                actualRow.add(column.getText());
+            }
             actualRows.add(actualRow);
 
         }
